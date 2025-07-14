@@ -28,8 +28,8 @@ const PostSchema = new mongoose.Schema(
       maxlength: [200, 'Excerpt cannot be more than 200 characters'],
     },
     author: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      type: String,
+      
       required: true,
     },
     category: {
@@ -97,4 +97,4 @@ PostSchema.methods.incrementViewCount = function () {
   return this.save();
 };
 
-module.exports = mongoose.model('Post', PostSchema); 
+module.exports = mongoose.model('Post', PostSchema);
